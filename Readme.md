@@ -1,38 +1,38 @@
-# Alexa Voice Library
+# Biblioteca de Voz Alexa
 
 =======
 
-*A library and sample app to abstract access to the Amazon Alexa service for Android applications.*
+*Uma biblioteca e aplicativo de exemplo para abstrair o acesso ao serviço Amazon Alexa para aplicativos Android.*
 
-First and foremost, my goal with this project is to help others who have less of an understanding of Java, Android, or both, to be able to quickly and easily integrate the Amazon Alexa platform into their own applications.
+Em primeiro lugar, meu objetivo com este projeto é ajudar outras pessoas que têm menos conhecimento de Java, Android ou ambos, a serem capazes de integrar rápida e facilmente a plataforma Amazon Alexa em seus próprios aplicativos.
 
-For getting started with the Amazon Alexa platform, take a look over here: https://developer.amazon.com/appsandservices/solutions/alexa/alexa-voice-service/getting-started-with-the-alexa-voice-service
+Para começar a usar a plataforma Amazon Alexa, dê uma olhada aqui: https://developer.amazon.com/appsandservices/solutions/alexa/alexa-voice-service/getting-started-with-the-alexa-voice-service
 
-Library updated with functionality for the Alexa [v20160207 API version](https://developer.amazon.com/public/solutions/alexa/alexa-voice-service/content/avs-api-overview).
+Biblioteca atualizada com funcionalidade para Alexa [versão da API v20160207](https://developer.amazon.com/public/solutions/alexa/alexa-voice-service/content/avs-api-overview).
 
-## Applications
+## Formulários
 
-### Sample Application
+### Aplicativo de amostra
 
-Curious about what the library can do? A quick example of the three main functions (live recorded audio events, text-to-speech intents, prerecorded audio intents), plus sample code can be found in the [sample app](https://play.google.com/store/apps/details?id=com.willblaschko.android.alexavoicelibrary)
+Curioso sobre o que a biblioteca pode fazer? Um exemplo rápido das três funções principais (eventos de áudio gravados ao vivo, intenções de conversão de texto em fala, intenções de áudio pré-gravadas), além de código de exemplo, pode ser encontrado no [aplicativo de exemplo](https://play.google.com/store /apps/details?id=com.willblaschko.android.alexavoicelibrary)
 
-#### Compiling and running the sample application
-* Follow the process for creating a connected device detailed at the Amazon link at the top of the Readme.
-* Add your api_key.txt file (part of the Amazon process) to the app/src/main/assets folder
-* Change [PRODUCT_ID](https://github.com/willblaschko/AlexaAndroid/blob/master/app/src/main/java/com/willblaschko/android/alexavoicelibrary/global/Constants.java#L8) to the value for my Alexa application that you configured for "Application Type Id" above.
-* Build and run the sample app using Gradle from the command line or Android Studio!
+#### Compilando e executando o aplicativo de exemplo
+* Siga o processo para criar um dispositivo conectado detalhado no link da Amazon na parte superior do Leiame.
+* Adicione seu arquivo api_key.txt (parte do processo Amazon) à pasta app/src/main/assets
+* Altere [PRODUCT_ID](https://github.com/willblaschko/AlexaAndroid/blob/master/app/src/main/java/com/willblaschko/android/alexavoicelibrary/global/Constants.java#L8) para o valor de meu aplicativo Alexa que você configurou para "Id do tipo de aplicativo" acima.
+* Crie e execute o aplicativo de amostra usando Gradle na linha de comando ou no Android Studio!
 
-### Production Application
+### Aplicação de produção
 
-Or see what the library can do when converted into a full package, complete with optional always-on listener: [Alexa Listens](https://play.google.com/store/apps/details?id=com.willblaschko.android.alexalistens)
+Ou veja o que a biblioteca pode fazer quando convertida em um pacote completo, completo com ouvinte sempre ativo opcional: [Alexa Listens](https://play.google.com/store/apps/details?id=com.willblaschko.android .alexalistens)
 
-## Using the Library
+## Usando a Biblioteca
 
-Most of the library can be accessed through the [AlexaManager](http://willblaschko.github.io/AlexaAndroid/com/willblaschko/android/alexa/AlexaManager.html) and [AlexaAudioPlayer](http://willblaschko.github.io/AlexaAndroid/com/willblaschko/android/alexa/avs/AlexaAudioPlayer.html) classes, both of which are singletons.
+A maior parte da biblioteca pode ser acessada através do [AlexaManager](http://willblaschko.github.io/AlexaAndroid/com/willblaschko/android/alexa/AlexaManager.html) e [AlexaAudioPlayer](http://willblaschko.github. io/AlexaAndroid/com/willblaschko/android/alexa/avs/AlexaAudioPlayer.html), ambas são singletons.
 
-### Installation
+### Instalação
 
-* Ensure you're pulling from jcenter() for your project (project-level build.gradle):
+*Verifique se você está extraindo de jcenter () para seu projeto (build.gradle no nível do projeto):
 ```java
 buildscript {
     repositories {
@@ -47,16 +47,16 @@ allprojects {
     }
 }
 ```
-* Add the library to your imports (application-level build.gradle):
+* Adicione a biblioteca às suas importações (application-level build.gradle):
 ```java
 compile 'com.willblaschko.android.alexa:AlexaAndroid:2.4.2'
 ```
-* Follow the process for creating a connected device detailed in the Amazon link at the top of the Readme.
-* Follow the instructions for adding your key and preparing the Login with Amazon activity from the ['Login with Amazon' Android Project guide](https://developer.amazon.com/public/apis/engage/login-with-amazon/docs/create_android_project.html)
-* Add your api_key.txt file (part of the Login with Amazon process detailed in the link above) to the app/src/main/assets folder.
-* Start integration and testing!
+* Siga o processo para criar um dispositivo conectado detalhado no link da Amazon na parte superior do Leiame.
+* Siga as instruções para adicionar sua chave e preparar a atividade Login with Amazon no [guia do projeto Android 'Login with Amazon'](https://developer.amazon.com/public/apis/engage/login-with-amazon/ docs/create_android_project.html)
+* Adicione seu arquivo api_key.txt (parte do processo de Login with Amazon detalhado no link acima) à pasta app/src/main/assets.
+* Inicie a integração e os testes!
 
-### Library Instantiation and Basic Return Parsing
+### Instanciação de biblioteca e análise básica de retorno
 
 ```java
 private AlexaManager alexaManager;
@@ -64,17 +64,17 @@ private AlexaAudioPlayer audioPlayer;
 private List<AvsItem> avsQueue = new ArrayList<>();
 
 private void initAlexaAndroid(){
-	//get our AlexaManager instance for convenience
-	alexaManager = AlexaManager.getInstance(this, PRODUCT_ID);
+	//obtém nossa instância AlexaManager por conveniência
+alexaManager = AlexaManager.getInstance(this, PRODUCT_ID);
 
-	//instantiate our audio player
-	audioPlayer = AlexaAudioPlayer.getInstance(this);
+//instancia nosso reprodutor de áudio
+audioPlayer = AlexaAudioPlayer.getInstance(this);
 
-	//Callback to be able to remove the current item and check queue once we've finished playing an item
-	audioPlayer.addCallback(alexaAudioPlayerCallback);
+//Callback para poder remover o item atual e verificar a fila assim que terminarmos de reproduzir um item
+audioPlayer.addCallback(alexaAudioPlayerCallback);
 }
 
-//Our callback that deals with removing played items in our media player and then checking to see if more items exist
+// Nosso retorno de chamada que lida com a remoção de itens reproduzidos em nosso reprodutor de mídia e, em seguida, verifica se existem mais itens
 private AlexaAudioPlayer.Callback alexaAudioPlayerCallback = new AlexaAudioPlayer.Callback() {
 	@Override
 	public void playerPrepared(AvsItem pendingItem) {
@@ -98,7 +98,7 @@ private AlexaAudioPlayer.Callback alexaAudioPlayerCallback = new AlexaAudioPlaye
 	}
 };
 
-//async callback for commands sent to Alexa Voice
+// retorno de chamada assíncrono para comandos enviados ao Alexa Voice
 private AsyncCallback<AvsResponse, Exception> requestCallback = new AsyncCallback<AvsResponse, Exception>() {
 	@Override
 	public void start() {
@@ -123,17 +123,17 @@ private AsyncCallback<AvsResponse, Exception> requestCallback = new AsyncCallbac
 };
 
 /**
- * Handle the response sent back from Alexa's parsing of the Intent, these can be any of the AvsItem types (play, speak, stop, clear, listen)
- * @param response a List<AvsItem> returned from the mAlexaManager.sendTextRequest() call in sendVoiceToAlexa()
+ *Lidar com a resposta enviada de volta da análise do Intent do Alexa, que pode ser qualquer um dos tipos AvsItem (reproduzir, falar, parar, limpar, ouvir)
+  * @param resposta uma List<AvsItem> retornada da chamada mAlexaManager.sendTextRequest() em sendVoiceToAlexa()
  */
 private void handleResponse(AvsResponse response){
 	if(response != null){
-		//if we have a clear queue item in the list, we need to clear the current queue before proceeding
-		//iterate backwards to avoid changing our array positions and getting all the nasty errors that come
-		//from doing that
+		//se tivermos um item de fila limpa na lista, precisamos limpar a fila atual antes de prosseguir
+		// iterar para trás para evitar alterar nossas posições de array e obter todos os erros desagradáveis que surgem
+		// de fazer isso
 		for(int i = response.size() - 1; i >= 0; i--){
 			if(response.get(i) instanceof AvsReplaceAllItem || response.get(i) instanceof AvsReplaceEnqueuedItem){
-				//clear our queue
+				//limpar nossa fila
 				avsQueue.clear();
 				//remove item
 				response.remove(i);
@@ -146,15 +146,15 @@ private void handleResponse(AvsResponse response){
 
 
 /**
- * Check our current queue of items, and if we have more to parse (once we've reached a play or listen callback) then proceed to the
- * next item in our list.
- *
- * We're handling the AvsReplaceAllItem in handleResponse() because it needs to clear everything currently in the queue, before
- * the new items are added to the list, it should have no function here.
- */
+ *Verifique nossa fila atual de itens e, se tivermos mais para analisar (assim que chegarmos a uma reprodução ou retorno de chamada), prossiga para o
+  * próximo item da nossa lista.
+  *
+  * Estamos lidando com AvsReplaceAllItem em handleResponse() porque ele precisa limpar tudo que está atualmente na fila, antes
+  * os novos itens são adicionados à lista, não deve ter função aqui.
+  */
 private void checkQueue() {
 
-	//if we're out of things, hang up the phone and move on
+	//se estivermos sem coisas, desligue o telefone e siga em frente
 	if (avsQueue.size() == 0) {
 		return;
 	}
@@ -162,22 +162,22 @@ private void checkQueue() {
 	AvsItem current = avsQueue.get(0);
 
 	if (current instanceof AvsPlayRemoteItem) {
-		//play a URL
+		//reproduzir um URL
 		if (!audioPlayer.isPlaying()) {
 			audioPlayer.playItem((AvsPlayRemoteItem) current);
 		}
 	} else if (current instanceof AvsPlayContentItem) {
-		//play a URL
+		//reproduzir um URL
 		if (!audioPlayer.isPlaying()) {
 			audioPlayer.playItem((AvsPlayContentItem) current);
 		}
 	} else if (current instanceof AvsSpeakItem) {
-		//play a sound file
+		//reproduzir um arquivo de som
 		if (!audioPlayer.isPlaying()) {
 			audioPlayer.playItem((AvsSpeakItem) current);
 		}
 	} else if (current instanceof AvsStopItem) {
-		//stop our play
+		//pare nosso jogo
 		audioPlayer.stop();
 		avsQueue.remove(current);
 	} else if (current instanceof AvsReplaceAllItem) {
@@ -186,7 +186,7 @@ private void checkQueue() {
 	} else if (current instanceof AvsReplaceEnqueuedItem) {
 		avsQueue.remove(current);
 	} else if (current instanceof AvsExpectSpeechItem) {
-		//listen for user input
+		//ouvir a entrada do usuário
 		audioPlayer.stop();
 		startListening();
 	} else if (current instanceof AvsSetVolumeItem) {
@@ -199,36 +199,36 @@ private void checkQueue() {
 		setMute(((AvsSetMuteItem) current).isMute());
 		avsQueue.remove(current);
 	}else if(current instanceof AvsMediaPlayCommandItem){
-		//fake a hardware "play" press
+		//falsificar uma pressão de "reproduzir" de hardware
 		sendMediaButton(this, KeyEvent.KEYCODE_MEDIA_PLAY);
 	}else if(current instanceof AvsMediaPauseCommandItem){
-		//fake a hardware "pause" press
+		//fingir um pressionamento de "pausa" de hardware
 		sendMediaButton(this, KeyEvent.KEYCODE_MEDIA_PAUSE);
 	}else if(current instanceof AvsMediaNextCommandItem){
-		//fake a hardware "next" press
+		//fingir um pressionamento de "próximo" de hardware
 		sendMediaButton(this, KeyEvent.KEYCODE_MEDIA_NEXT);
 	}else if(current instanceof AvsMediaPreviousCommandItem){
-		//fake a hardware "previous" press
+		//fingir um pressionamento "anterior" de hardware
 		sendMediaButton(this, KeyEvent.KEYCODE_MEDIA_PREVIOUS);
 	}
 
 }
 
-//our call to start listening when we get a AvsExpectSpeechItem
+//nossa chamada para começar a ouvir quando recebermos um AvsExpectSpeechItem
 protected abstract void startListening();
 
-//adjust our device volume
+//ajustar o volume do nosso dispositivo
 private void adjustVolume(long adjust){
 	setVolume(adjust, true);
 }
 
-//set our device volume
+//definir o volume do nosso dispositivo
 private void setVolume(long volume){
 	setVolume(volume, false);
 }
 
-//set our device volume, handles both adjust and set volume to avoid repeating code
-private void setVolume(final long volume, final boolean adjust){
+//definir o volume do nosso dispositivo, lida com ajustar e definir o volume para evitar a repetição do código
+private void setVolume(volume longo final, ajuste booleano final){
 	AudioManager am = (AudioManager) getSystemService(AUDIO_SERVICE);
 	final int max = am.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
 	long vol= am.getStreamVolume(AudioManager.STREAM_MUSIC);
@@ -242,11 +242,11 @@ private void setVolume(final long volume, final boolean adjust){
 	alexaManager.sendVolumeChangedEvent(volume, vol == 0, requestCallback);
 }
 
-//set device to mute
-private void setMute(final boolean isMute){
+//definir dispositivo para silenciar
+private void setMute(final booleano isMute){
 	AudioManager am = (AudioManager) getSystemService(AUDIO_SERVICE);
 	am.setStreamMute(AudioManager.STREAM_MUSIC, isMute);
-	//confirm device mute
+	//confirmar dispositivo mudo
 	alexaManager.sendMutedEvent(isMute, requestCallback);
 }
 
@@ -264,23 +264,23 @@ private void setMute(final boolean isMute){
 ```
 
 
-## Recipes
+## Receitas
 
-Here's a quick overview of the code that will likely be required to create a solid application, check the [JavaDoc](http://willblaschko.github.io/AlexaAndroid/) for more details.
+Aqui está uma rápida visão geral do código que provavelmente será necessário para criar um aplicativo sólido, verifique o [JavaDoc](http://willblaschko.github.io/AlexaAndroid/) para obter mais detalhes.
 
-### Logging In To Amazon
+### Como fazer login na Amazon
 ```java
-//Run an async check on whether we're logged in or not
+//Execute uma verificação assíncrona se estamos logados ou não
 alexaManager.checkLoggedIn(mLoggedInCheck);
 
-//Check if the user is already logged in to their Amazon account
+//Verifique se o usuário já está logado em sua conta Amazon
 alexaManager.checkLoggedIn(AsyncCallback...);
 
-//Log the user in
+//Faça login do usuário
 alexaManager.logIn(AuthorizationCallback...);
 ```
 
-### Send Live Audio (bonus: check for [Record Audio](https://developer.android.com/reference/android/Manifest.permission.html#RECORD_AUDIO) permission)
+### Enviar áudio ao vivo (bonus: verificar se há [Record Audio](https://developer.android.com/reference/android/Manifest.permission.html#RECORD_AUDIO) permissão)
 ```java
 private final static int MY_PERMISSIONS_REQUEST_RECORD_AUDIO = 1;
 private static final int AUDIO_RATE = 16000;
@@ -291,7 +291,7 @@ private RecorderView recorderView;
 public void onResume() {
     super.onResume();
 
-    //request API-23 permission for RECORD_AUDIO
+    //solicitar permissão API-23 para RECORD_AUDIO
     if (ContextCompat.checkSelfPermission(getActivity(),
             Manifest.permission.RECORD_AUDIO)
             != PackageManager.PERMISSION_GRANTED) {
@@ -304,7 +304,7 @@ public void onResume() {
     }
 }
 
-//recieve RECORD_AUDIO permissions request
+//receber solicitação de permissões RECORD_AUDIO
 @Override
 public void onRequestPermissionsResult(int requestCode,
                                        @NonNull String permissions[],
@@ -341,11 +341,11 @@ public void startListening() {
     alexaManager.sendAudioRequest(requestBody, getRequestCallback());
 }
 
-//our streaming data requestBody
+//nosso requestBody de dados de streaming
 private DataRequestBody requestBody = new DataRequestBody() {
     @Override
     public void writeTo(BufferedSink sink) throws IOException {
-        //while our recorder is not null and it is still recording, keep writing to POST data
+        //enquanto nosso gravador não estiver nulo e ainda estiver gravando, continue gravando nos dados do POST
         while (recorder != null && !recorder.isPausing()) {
             if(recorder != null) {
                 final float rmsdb = recorder.getRmsdb();
@@ -362,7 +362,7 @@ private DataRequestBody requestBody = new DataRequestBody() {
                 }
             }
 
-            //sleep and do it all over again
+            //dormir e fazer tudo de novo
             try {
                 Thread.sleep(25);
             } catch (InterruptedException e) {
@@ -374,7 +374,7 @@ private DataRequestBody requestBody = new DataRequestBody() {
 
 };
 
-//tear down our recorder
+//derrubar nosso gravador
 private void stopListening(){
     if(recorder != null) {
         recorder.stop();
@@ -384,11 +384,11 @@ private void stopListening(){
 }
 ```
 
-### Send Prerecorded Audio
+### Enviar áudio pré-gravado
 ```java
-//send prerecorded audio to Alexa, parse the callback in requestCallback
+//enviar áudio pré-gravado para Alexa, analisar o retorno de chamada em requestCallback
 try {
-    //open asset file
+    //abrir arquivo de ativo
     InputStream is = getActivity().getAssets().open("intros/joke.raw");
     byte[] fileBytes=new byte[is.available()];
     is.read(fileBytes);
@@ -399,24 +399,24 @@ try {
 }
 ```
 
-### Send Text Request
+### Enviar Pedido de Texto
 ```java
-//send a text request to Alexa, parse the callback in requestCallback
+//envie uma solicitação de texto para Alexa, analise o retorno de chamada em requestCallback
 mAlexaManager.sendTextRequest(text, requestCallback);
 ```
 
-### Play Returned Content
+### Reproduzir conteúdo devolvido
 ```java
-//Play an AvsPlayItem returned by our requests
+//Reproduzir um AvsPlayItem retornado por nossas solicitações
 audioPlayer.playItem(AvsPlayAudioItem...);
 
-//Play an AvsSpeakItem returned by our requests
+//Reproduzir um AvsSpeakItem retornado por nossas solicitações
 audioPlayer.playItem(AvsSpeakItem...);
 ```
 
-## Everything Else
+## Todo o resto
 
-Let me know if you would like to contribute to this library!
+Deixe-me saber se você gostaria de contribuir para esta biblioteca!
 
-## Thanks
+## Obrigado
 [Josh](https://github.com/joshpar) for MP3 work
